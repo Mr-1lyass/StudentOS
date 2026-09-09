@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>StudentOS</title>
+</head>
+
+<body class="bodyCenter">
+    <main id="mainIndex">
+        <h1>StudentOS</h1>
+        <div id="DivButtonDash">
+            <a href="./matiere.html" class="buttonDash">Matières</a>
+            <a href="./taches.html" class="buttonDash">Tâches</a>
+            <a href="./examen.html" class="buttonDash">Examens</a>
+            <a href="./statistiques.html" class="buttonDash">Statistiques</a>
+        </div>
+        <h2>Dashboard</h2>
+        <div id="DivBulleDash">
+            <div class="bulleDash bulle1">
+                <p class="parBulles"></p>
+                <p>matières</p>
+            </div>
+            <div class="bulleDash bulle2">
+                <p class="parBulles"></p>
+                <p>tâches à réaliser</p>
+            </div>
+            <div class="bulleDash bulle3">
+                <p class="parBulles"></p>
+                <p>examens à venir</p>
+            </div>
+        </div>
+        <div>
+            <h3>Prochaines échances à venir</h3>
+            <hr>
+            <div id="containerEcheances"></div>
+        </div>
+    </main>
+
+    <script src="./scripts/index.js"></script>
+</body>
+
+</html>

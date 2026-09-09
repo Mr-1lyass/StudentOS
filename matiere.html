@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matière</title>
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+    <a href="./index.html" class="backButton">Retour</a>
+    <div class="bodyCenter">
+        <main class="mainLabel">
+            <h1>Ajout d'une matière</h1>
+            <label for="nom">Nom : </label>
+            <input type="text" id="name">
+            <label for="professeur">Professeur : </label>
+            <input type="text" id="professeur">
+            <label for="genre">Genre : </label>
+            <select id="genre">
+                <option value="Mr">Mr</option>
+                <option value="Mme">Mme</option>
+            </select>
+            <button class="addButton">Ajouter</button>
+        </main>
+        <p class="message"></p>
+        <h2 style="display:none">Ensemble des matières<h2>
+        <div id="sectionMatiere"></div>
+    </div>
+    <script src="./scripts/matiere.js"></script>
+</body>
+
+</html>

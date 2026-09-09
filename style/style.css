@@ -1,0 +1,268 @@
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1
+{
+    margin-bottom: 50px;
+}
+
+#mainIndex
+{
+    width: 800px;
+    text-align: center;
+}
+
+.bulleDash
+{
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.parBulles
+{
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.bulle1
+{
+    background-color: rgb(232, 189, 255);
+}
+
+.bulle2
+{
+    background-color: rgb(255, 141, 141);
+}
+
+.bulle3
+{
+    background-color: rgb(156, 217, 247);
+}
+
+#DivBulleDash
+{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:5px
+}
+
+#DivButtonDash
+{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:5px;
+    margin-bottom: 50px;
+}
+
+.buttonDash
+{
+    padding: 15px;
+    cursor: pointer;
+    background-color: rgb(91, 91, 91);
+    font-size:15px;
+    border-radius: 3px;
+    color: white;
+    text-decoration: none;
+}
+
+.buttonDash:hover
+{
+    font-weight: bold;
+    background-color: rgb(112, 112, 112);
+}
+
+.backButton
+{
+    margin:15px;
+    padding: 15px;
+    cursor: pointer;
+    background-color: rgb(3, 3, 3);
+    font-size:15px;
+    border-radius: 3px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.backButton:hover
+{
+    background-color: rgb(83, 83, 83);
+}
+
+.mainLabel
+{
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    row-gap: 8px;
+    max-width: 600px;
+}
+
+.mainLabel h1
+{
+    grid-column: span 2;
+    text-align: center;
+}
+
+.mainLabel label, .mainLabel input, .mainLabel select
+{
+    font-size:18px;
+}
+
+.addButton
+{
+    margin: 10px;
+    grid-column:span 2;
+    cursor: pointer;
+    width:100px;
+    border:none;
+    justify-self: center;
+    background-color: rgb(112, 143, 255);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 18px;
+    border-radius: 5px;
+}  
+
+.addButton:hover
+{
+    background-color: rgb(95, 129, 254);
+}
+
+.bodyCenter
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#mainStat
+{
+    width: 500px;
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    align-items: center;
+}
+
+#mainStat h2, #mainStat h3, #numberTaskFinished, #numberTaskStay
+{
+    grid-column: span 2;
+}
+
+.progress-bar-container
+{
+    height: 30px;
+    width:100%;
+    background-color: #F0F0F0;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
+.progress-bar-fill
+{
+    background-color: #000000;
+    height: 30px;
+    border-radius: 8px;
+}
+
+#percTachesTerminés
+{
+    text-align: end;
+    font-size: 17px;
+}
+
+#matiereStat
+{
+    grid-column: span 2;
+}
+
+.rowMatiereStat
+{
+    align-items: center;
+    display: grid;
+    grid-template-columns: 120px 1fr 50px;
+    gap:15px;
+}
+
+#sectionMatiere, #sectionExamen
+{
+    display: flex;
+    gap:20px;
+}
+
+.rowMatiere, .rowExamen
+{
+    padding:20px;
+    background-color:rgb(63, 130, 255);
+    color:white;
+    width: 250px;
+    height: 150px;
+    font-size: 17px;
+    border-radius: 10px;
+}
+
+.rowExamen
+{
+    height: 250px;
+    width: 350px;
+    background-color:rgb(255, 69, 91);
+    text-align: center;
+}
+
+.delete-button
+{
+    margin-top: 20px;
+    cursor:pointer;
+    border:none;
+    background-color: rgb(0, 0, 0);
+    color:white;
+    font-size:15px;
+    font-weight: bold;
+    border-radius:3px;
+    padding: 10px;
+}
+
+#sectionTaches
+{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3,1fr);
+    text-align: center;
+}
+.sousSectionTachesDonnees
+{
+    width: 100%;
+    display: flex;
+    gap:10px;
+    justify-content: center;
+    text-align: left;
+    margin:auto auto 50px 10px;
+    flex-wrap: wrap;
+}
+
+.rowTask
+{
+    width: 190px;
+    background-color: #3b70a5;
+    color: white;
+    border-radius: 5px;
+    padding: 8px;
+    font-size:17px;
+}
+
+.rowTask select, .rowTask option
+{
+    font-size:17px;
+    background-color: #3b70a5;
+    color: white;
+    border:none;
+    font-weight: bold;
+}
+
+#containerEcheances
+{
+    display: flex;
+    justify-content: center;
+}

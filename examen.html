@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Examen</title>
+</head>
+
+<body>
+    <a href="./index.html" class="backButton">Retour</a>
+    <div class="bodyCenter">
+        <main class="mainLabel">
+            <h1>Ajouter un examen</h1>
+            <label for="matiere">Matière : </label>
+            <select id="matiere"></select>
+            <label for="description">Description : </label>
+            <input type="text" id="description">
+            <label for="date">Date : </label>
+            <input type="date" id="date">
+            <label for="heure">Heure : </label>
+            <input type="time" id="heure" value="08:20">
+            <label for="lieu">Lieu : </label>
+            <input type="text" id="lieu">
+            <button class="addButton">Ajouter</button>
+        </main>
+        <p class="message"></p>
+        <h2 style="display:none">Ensemble des examens</h2>
+        <div id="sectionExamen"></div>
+    </div>
+    
+    <script src="./scripts/examen.js"></script>
+</body>
+
+</html>

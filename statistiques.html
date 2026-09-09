@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Statistiques</title>
+</head>
+
+<body>
+    <a href="./index.html" class="backButton">Retour</a>
+    <div class="bodyCenter">
+        <main id="mainStat">
+            <h2>Cette semaine</h2>
+            <h3>Tâches terminés</h3>
+            <div class="progress-bar-container">
+                <div class="progress-bar-fill">‎</div>
+            </div>
+            <p id="percTachesTerminés"></p>
+            <p id="numberTaskFinished">12 tâches terminées</p>
+            <p id="numberTaskStay">3 restantes</p>
+            <h3>Matières</h3>
+            <div id="matiereStat">
+                <div class="rowMatiereStat">
+                    <p>Programmation</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill" style="width:100%">‎</div>
+                    </div>
+                    <p>100%</p> 
+                </div>
+                <div class="rowMatiereStat">
+                    <p>Mathématique</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill" style="width:60%">‎</div>
+                    </div>
+                    <p>60%</p> 
+                </div>
+                <div class="rowMatiereStat">
+                    <p>Anglais</p>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill" style="width:80%">‎</div>
+                    </div>
+                    <p>80%</p> 
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="./scripts/statistiques.js"></script>
+</body>
+
+</html>

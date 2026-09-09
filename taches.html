@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Taches</title>
+</head>
+
+<body>
+    <a href="./index.html" class="backButton">Retour</a>
+    <div class="bodyCenter">
+        <main class="mainLabel">
+            <h1>Ajouter une tâche</h1>
+            <label for="titre">Titre : </label>
+            <input type="text" id="titre">
+            <label for="description">Description : </label>
+            <input type="text" id="description">
+            <label for="matiere">Matière : </label>
+            <select id="matiere"></select>
+            <label for="priorite">Priorité : </label>
+            <select id="priorite">
+                <option value="🟢Faible priorité">Faible priorité</option>
+                <option value="🟡Priorité moyenne">Priorité moyenne</option>
+                <option value="🔴Haute priorité">Haute priorité</option>
+            </select>
+            <label for="date">Date limite : </label>
+            <input type="date" id="date">
+            <label for="statut">Statut : </label>
+            <select id="statut">
+                <option value="A faire">A faire</option>
+                <option value="En cours">En cours</option>
+                <option value="Terminé">Terminé</option>
+            </select>
+            <button class="addButton">Ajouter</button>
+        </main>
+        <p class="message"></p>
+        <h2 style="display:none">Ensemble des tâches</h2>
+        <div id="sectionTaches">
+                <div class="sousSectionTaches">
+                    <h3 style="display: none;">A faire</h3>
+                    <div class="sousSectionTachesDonnees"></div>
+                </div>
+                <div class="sousSectionTaches">
+                    <h3 style="display: none;">En cours</h3>
+                    <div class="sousSectionTachesDonnees"></div>
+                </div>
+                <div class="sousSectionTaches">
+                    <h3 style="display: none;">Terminé</h3>
+                    <div class="sousSectionTachesDonnees"></div>
+                </div>
+            
+        </div>
+    </div>
+
+    <script src="./scripts/taches.js"></script>
+</body>
+
+</html>
