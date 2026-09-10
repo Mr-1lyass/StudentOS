@@ -33,7 +33,7 @@ function affichage_donnees()
     const nbreTacheAfaire = arrayTacheaFaire.length;
     const nbreExamen = arrayExamenVenir.length;
     const donnees = document.querySelectorAll(".parBulles");
-    donnees[0].innerHTML = "nbreMatiere";
+    donnees[0].innerHTML = nbreMatiere;
     donnees[1].innerHTML = nbreTacheAfaire;
     donnees[2].innerHTML = nbreExamen;
 }
