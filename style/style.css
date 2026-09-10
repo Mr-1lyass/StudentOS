@@ -162,6 +162,7 @@ h1
 
 .progress-bar-fill
 {
+    width:0%;
     background-color: #000000;
     height: 30px;
     border-radius: 8px;

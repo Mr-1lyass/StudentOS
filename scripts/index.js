@@ -2,9 +2,9 @@ const localMatiere = JSON.parse(localStorage.getItem("matiere"));
 const localTask = JSON.parse(localStorage.getItem("task"));
 const localExamen = JSON.parse(localStorage.getItem("examen"));
 
-const arrayMatiere = remplirLocal(localMatiere);
-const arrayTask = remplirLocal(localTask);
-const arrayExamen = remplirLocal(localExamen);
+const arrayMatiere = setLocal(localMatiere);
+const arrayTask = setLocal(localTask);
+const arrayExamen = setLocal(localExamen);
 
 suppr_TacheExamen(arrayExamen,arrayTask);
 
@@ -12,9 +12,9 @@ affichage_donnees();
 
 affichage_echeances();
 
-function remplirLocal(local)
+function setLocal(local)
 {
-    if(local != null)
+    if(Array.isArray(local))
     {
         return local;
     }
@@ -33,7 +33,7 @@ function affichage_donnees()
     const nbreTacheAfaire = arrayTacheaFaire.length;
     const nbreExamen = arrayExamenVenir.length;
     const donnees = document.querySelectorAll(".parBulles");
-    donnees[0].innerHTML = nbreMatiere;
+    donnees[0].innerHTML = "nbreMatiere";
     donnees[1].innerHTML = nbreTacheAfaire;
     donnees[2].innerHTML = nbreExamen;
 }

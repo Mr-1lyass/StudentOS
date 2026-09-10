@@ -1,6 +1,7 @@
 const local = JSON.parse(localStorage.getItem("task"));
 
-const arrayTask = local;
+const arrayTask = setLocal(local);
+
 
 const progressBar = document.querySelectorAll('.progress-bar-fill');
 
@@ -149,4 +150,16 @@ function saisieTacheMatiere(matiereTask)
     })
 
     html.innerHTML = text;
+}
+
+function setLocal(local)
+{
+    if(Array.isArray(local))
+    {
+        return local;
+    }
+    else
+    {
+        return [];
+    }
 }

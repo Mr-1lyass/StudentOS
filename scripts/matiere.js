@@ -1,15 +1,6 @@
 const local = JSON.parse(localStorage.getItem("matiere"));
 
-var arrayMatiere;
-
-if(local != null)
-{
-    arrayMatiere = local;
-}
-else
-{
-    arrayMatiere = [];
-}
+const arrayMatiere = setLocal(local);
 
 const addButton = document.querySelector(".addButton");
 addButton.addEventListener('click', ajoutMatiere);
@@ -94,4 +85,16 @@ function affichageMatiere() {
             affichageMatiere();
         })
     })
+}
+
+function setLocal(local)
+{
+    if(Array.isArray(local))
+    {
+        return local;
+    }
+    else
+    {
+        return [];
+    }
 }

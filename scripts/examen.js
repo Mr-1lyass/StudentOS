@@ -1,9 +1,8 @@
 const localMatiere = JSON.parse(localStorage.getItem("matiere"));
 const localExamen = JSON.parse(localStorage.getItem("examen"));
 
-var arrayMatiere, arrayExamen;
-
-initialiseLocal();
+const arrayMatiere = setLocal(localMatiere);
+const arrayExamen = setLocal(localExamen);
 
 selectMatiere();
 
@@ -124,22 +123,14 @@ function selectMatiere()
 }
 
 
-function initialiseLocal()
+function setLocal(local)
 {
-    if(localMatiere != null)
+    if(Array.isArray(local))
     {
-        arrayMatiere = localMatiere;
+        return local;
     }
     else
     {
-        arrayMatiere = [];
-    }
-    if(localExamen != null)
-    {
-        arrayExamen = localExamen;
-    }
-    else
-    {
-        arrayExamen = [];
+        return [];
     }
 }

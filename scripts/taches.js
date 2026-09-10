@@ -1,10 +1,8 @@
 const localTask = JSON.parse(localStorage.getItem("task"));
 const localMatiere = JSON.parse(localStorage.getItem("matiere"));
 
-var arrayTask;
-var arrayMatiere;
-
-setLocal();
+const arrayTask = setLocal(localTask);
+const arrayMatiere = setLocal(localMatiere);
 
 selectMatiere();
 
@@ -160,24 +158,15 @@ function selectMatiere()
     select.innerHTML = htmlText;
 }
 
-function setLocal()
+function setLocal(local)
 {
-    if(localTask != null)
+    if(Array.isArray(local))
     {
-        arrayTask = localTask;
+        return local;
     }
     else
     {
-        arrayTask = [];
-    }
-
-    if(localMatiere != null)
-    {
-        arrayMatiere = localMatiere;
-    }
-    else
-    {
-        arrayMatiere = [];
+        return [];
     }
 }
 
