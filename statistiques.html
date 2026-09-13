@@ -8,9 +8,8 @@
     <title>Statistiques</title>
 </head>
 
-<body>
+<body class="bodyCenter">
     <a href="./index.html" class="backButton">Retour</a>
-    <div class="bodyCenter">
         <main id="mainStat">
             <h2>Cette semaine</h2>
             <h3>Tâches terminés</h3>
@@ -23,9 +22,10 @@
             <h3>Matières</h3>
             <div id="matiereStat"></div>
         </main>
-    </div>
 
-    <script src="./scripts/statistiques.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="./scripts/config.js"></script>
+    <script type="module" src="./scripts/statistiques.js"></script>
 </body>
 
 </html>

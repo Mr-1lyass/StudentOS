@@ -8,9 +8,8 @@
     <link rel="stylesheet" href="./style/style.css">
 </head>
 
-<body>
-    <a href="./index.html" class="backButton">Retour</a>
-    <div class="bodyCenter">
+<body class="bodyCenter">
+    <a href="./index.html" class="backButton">Retour</a>>
         <main class="mainLabel">
             <h1>Ajout d'une matière</h1>
             <label for="nom">Nom : </label>
@@ -23,12 +22,14 @@
                 <option value="Mme">Mme</option>
             </select>
             <button class="addButton">Ajouter</button>
-        </main>
+        </main> 
         <p class="message"></p>
         <h2 style="display:none">Ensemble des matières<h2>
         <div id="sectionMatiere"></div>
-    </div>
-    <script src="./scripts/matiere.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="./scripts/config.js"></script>
+    <script type="module" src="./scripts/matiere.js"></script>
 </body>
 
 </html>

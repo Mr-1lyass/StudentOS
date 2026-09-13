@@ -9,6 +9,9 @@
 </head>
 
 <body class="bodyCenter">
+    
+    <a href="./index.html" id="logoutBtn">Déconnexion</a>
+
     <main id="mainIndex">
         <h1>StudentOS</h1>
         <div id="DivButtonDash">
@@ -16,6 +19,7 @@
             <a href="./taches.html" class="buttonDash">Tâches</a>
             <a href="./examen.html" class="buttonDash">Examens</a>
             <a href="./statistiques.html" class="buttonDash">Statistiques</a>
+            <a href="./calendrier.html" class="buttonDash">Calendrier</a>
         </div>
         <h2>Dashboard</h2>
         <div id="DivBulleDash">
@@ -39,7 +43,11 @@
         </div>
     </main>
 
-    <script src="./scripts/index.js"></script>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="./scripts/config.js"></script>
+    <script type="module" src="./scripts/index.js"></script>
 </body>
 
 </html>

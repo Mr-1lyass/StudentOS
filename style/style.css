@@ -1,6 +1,8 @@
 body
 {
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #333333;
+    color: white;
 }
 
 h1
@@ -28,17 +30,20 @@ h1
 
 .bulle1
 {
-    background-color: rgb(232, 189, 255);
+    background-color: rgb(149, 75, 189);
+    box-shadow: 20px 10px 30px rgb(43, 22, 54);
 }
 
 .bulle2
 {
-    background-color: rgb(255, 141, 141);
+    background-color: rgb(195, 90, 90);
+    box-shadow: 20px 10px 30px rgb(54, 25, 25);
 }
 
 .bulle3
 {
-    background-color: rgb(156, 217, 247);
+    background-color: rgb(73, 149, 187);
+    box-shadow: 20px 10px 30px rgb(23, 47, 59);
 }
 
 #DivBulleDash
@@ -51,7 +56,7 @@ h1
 #DivButtonDash
 {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(5,1fr);
     gap:5px;
     margin-bottom: 50px;
 }
@@ -60,7 +65,7 @@ h1
 {
     padding: 15px;
     cursor: pointer;
-    background-color: rgb(91, 91, 91);
+    background-color: rgb(1, 1, 1);
     font-size:15px;
     border-radius: 3px;
     color: white;
@@ -70,11 +75,14 @@ h1
 .buttonDash:hover
 {
     font-weight: bold;
-    background-color: rgb(112, 112, 112);
+    background-color: rgb(70, 70, 70);
 }
 
 .backButton
 {
+    position: absolute;
+    top:10px;
+    left:10px;
     margin:15px;
     padding: 15px;
     cursor: pointer;
@@ -93,6 +101,7 @@ h1
 
 .mainLabel
 {
+    margin:50px;
     display: grid;
     grid-template-columns: 110px 1fr;
     row-gap: 8px;
@@ -118,7 +127,7 @@ h1
     width:100px;
     border:none;
     justify-self: center;
-    background-color: rgb(112, 143, 255);
+    background-color: rgb(0, 0, 0);
     color: white;
     font-size: 18px;
     font-weight: bold;
@@ -128,14 +137,16 @@ h1
 
 .addButton:hover
 {
-    background-color: rgb(95, 129, 254);
+    background-color: rgb(68, 68, 68);
 }
 
 .bodyCenter
 {
+    height: 90vh;
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
 }
 
 #mainStat
@@ -156,7 +167,7 @@ h1
     height: 30px;
     width:100%;
     background-color: #F0F0F0;
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 8px;
 }
 
@@ -268,3 +279,192 @@ h1
     justify-content: center;
     flex-direction: column;
 }
+
+#bodyCalendrier
+{
+    display:grid;
+    place-items:center;
+    height: 100vh;
+    margin:0;
+}
+
+.calendrier
+{
+    background-color: #111111;
+    border-radius: 10px;
+    box-shadow: 0 0 30px #222222;
+    overflow:hidden;
+    width:300px;
+    color: white;
+    padding:20px;
+}
+
+.header
+{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px;
+}
+
+.btnCalendrier
+{
+    cursor:pointer;
+}
+
+#month-year
+{
+    font-weight: bold;
+    font-size:20px;
+}
+
+.weekdays, .days{
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.days
+{
+    height: 240px;
+}
+
+.weekdays div, .days div
+{
+    width : 14.28%;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+.days div
+{
+    cursor:pointer;
+    transition: background-color 0.3s;
+}
+
+.days div:hover
+{
+    background-color: white;
+    color: orangered;
+}
+
+.days .fade 
+{
+    color: #555;
+}
+
+@keyframes clignote
+{
+    from {color:white; font-size:15px;}
+    to {color:red;}
+}
+
+@keyframes clignoteToday
+{
+    from {color:white; font-size:15px;}
+    to {color:black; font-weight: bold;}
+}
+
+.taskDate
+{
+    animation : clignote 1s infinite;
+}
+
+.days .today
+{
+    background-color: orangered;
+    color: white;
+}
+
+.today .taskDate
+{
+    animation : clignoteToday 1s infinite;
+}
+
+.boxTask .rowTask 
+{
+    width: 250px;
+}
+
+#containerBoxTask
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mainConnexion 
+{
+    border-radius: 5px;
+    padding: 30px 50px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+    box-shadow: 5px 5px 5px black;
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    row-gap: 10px;
+    width:400px;
+}
+
+.mainConnexion input, .mainConnexion label
+{
+    font-size: 18px;
+}
+
+.mainConnexion h1, p
+{
+    grid-column: span 2;
+    text-align: center;
+}
+
+.addButtonConnexion
+{
+    grid-column:span 2;
+    background-color: green;
+    width: 200px;
+    cursor: pointer;
+    color: white;
+    justify-self: center;
+    border:none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 18px 10px 18px 10px;
+    border-radius: 5px;
+}   
+
+.addButtonConnexion:hover
+{
+    background-color: rgb(0, 104, 0);
+}
+
+.divMessage
+{
+    grid-column: span 2;
+}
+
+#logoutBtn
+{
+    position: absolute;
+    top:10px;
+    right:10px;
+    margin:15px;
+    padding: 15px;
+    cursor: pointer;
+    background-color: rgb(255, 0, 0);
+    font-size:15px;
+    border-radius: 3px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#logoutBtn:hover
+{
+    background-color: rgb(100, 0, 0);
+}
+    
+    
+    
+    
+    
+    
