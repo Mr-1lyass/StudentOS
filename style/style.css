@@ -408,16 +408,31 @@ h1
     animation : clignoteToday 1s infinite;
 }
 
-.boxTask .rowTask 
+.boxTask .rowTask
 {
-    width: 250px;
+    width:350px;
 }
 
-#containerBoxTask
+.containerBoxTask
 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.boxTask
+{
+    display: flex;
+    justify-content: center;
+}
+
+#mainDate
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .mainConnexion 
@@ -497,7 +512,7 @@ h1
         display: flex;
         flex-direction: column;
     }
-    #mainStat
+    #mainStat, #mainDate
     {
         margin-top:70px;
     }
@@ -550,11 +565,10 @@ h1
         display: flex;
         flex-direction: column;
     }
-    .rowExamen
+    .rowExamen, .boxTask .rowTask
     {
-        width: 100%;
+        width: 90%;
     }
-
     .rowMatiereStat
     {
         display: grid;
