@@ -1,4 +1,5 @@
 import {supabase} from './config.js';
+import bcrypt from 'https://esm.sh/bcryptjs';
 
 document.addEventListener('DOMContentLoaded', async() => {
 
@@ -7,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async() => {
     if(local)
     {
         const main = document.querySelector('.mainConnexion');
-        main.innerHTML = "Vous êtes déjà connecté"
+        main.innerHTML = "<p>Vous êtes déjà connecté</p>"
     }
     else
     {
@@ -47,7 +48,6 @@ document.addEventListener('DOMContentLoaded', async() => {
             .from('user')
             .select('*')
             .eq('mail',mail)
-            .eq('password',password)
 
             if(error)
             {
@@ -57,14 +57,35 @@ document.addEventListener('DOMContentLoaded', async() => {
 
             if(user && user.length > 0)
             {
-                divMessage.innerHTML = `<p style="color:green">Connexion avec succès ✅</p>`;
-                localStorage.setItem("idUser",user[0].id);
-                inputMail.value = '';
-                inputPassword.value = '';
+                const storedHash = user[0].password;
 
-                setTimeout(() => {
+                const passwordMatch = bcrypt.compareSync(password,storedHash);
+
+                if(passwordMatch)
+                {
+                    divMessage.innerHTML = `<p style="color:green">Connexion avec succès ✅</p>`;
+                    localStorage.setItem("idUser",user[0].id);
+                    inputMail.value = '';
+                    inputPassword.value = '';
+
+                    const {error:insertError} = await supabase
+                    .from('user_connexion')
+                    .insert([{id_user: user[0].id}]);
+
+                    if(insertError)
+                    {
+                        console.error(insertError);
+                        return;
+                    }
+
+                    setTimeout(() => {
                     window.location.href = "index.html";
-                }, 3000);
+                    }, 1500);
+                }
+                else
+                {
+                    divMessage.innerHTML = `<p style="color:red">Adresse mail ou mot de passe incorrect ❌</p>`;
+                }
             }
             else
             {

@@ -1,4 +1,5 @@
 import {supabase} from './config.js';
+import bcrypt from 'https://esm.sh/bcryptjs';
 
 document.addEventListener('DOMContentLoaded', async() => {
 
@@ -46,32 +47,43 @@ document.addEventListener('DOMContentLoaded', async() => {
 
         else
         {
-            const {data:user ,error:error} = await supabase 
-            .from('user')
-            .insert([{
-                nom: nom,
-                prenom: prenom,
-                mail: mail,
-                password: password
-            }])
-            .select()
-
-            if(error)
+            try
             {
-                console.error(error);
-                return;
+                const salt = bcrypt.genSaltSync(10);
+                const hashedPassword = bcrypt.hashSync(password,salt);
+
+                const {data:user ,error:error} = await supabase 
+                    .from('user')
+                    .insert([{
+                        nom: nom,
+                        prenom: prenom,
+                        mail: mail,
+                        password: hashedPassword
+                    }])
+                    .select()
+
+                if(error)
+                {
+                    console.error(error);
+                    return;
+                }
+
+                divMessage.innerHTML = `<p style="color:green">Compte créé avec succés ✅</p>`;
+                localStorage.setItem("idUser",user[0].id);
+                inputNom.value = '';
+                inputPrenom.value = '';
+                inputMail.value = '';
+                inputPassword.value = '';
+
+                setTimeout(() => {
+                    window.location.href = "index.html";
+                }, 1600);
             }
-
-            divMessage.innerHTML = `<p style="color:green">Compte créé avec succés ✅</p>`;
-            localStorage.setItem("idUser",user[0].id);
-            inputNom.value = '';
-            inputPrenom.value = '';
-            inputMail.value = '';
-            inputPassword.value = '';
-
-            setTimeout(() => {
-                window.location.href = "index.html";
-            }, 3000);
+            catch(err)
+            {
+                console.error(err);
+                divMessage.innerHTML = `<p style="color:red">Erreur technique lors du hachage ❌</p>`;
+            }
         }
     }
 })

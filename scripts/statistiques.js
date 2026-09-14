@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', async() => {
             {
                 const pourcentage = Math.round(matiere.tachTerminés / (matiere.tachTerminés +matiere.tachRestantes) * 100);
                 text += `<div class="rowMatiereStat">
-                            <p>${matiere.matiere}</p>
+                            <p class="CoursrowMatiereStat">${matiere.matiere}</p>
                             <div class="progress-bar-container">
                                 <div class="progress-bar-fill" style="width:${pourcentage}%;">‎</div>
                             </div>

@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         const task = arrayTask || [];
         const examen = arrayExamen || [];
 
-        const logoutBtn = document.querySelector('.logoutBtn');
+        const logoutBtn = document.querySelector('#logoutBtn');
         logoutBtn.addEventListener('click',()=>{
             localStorage.clear();
             window.location.reload();

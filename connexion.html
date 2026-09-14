@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bcryptjs@2.4.3/dist/bcrypt.min.js"></script>
     <title>Connexion</title>
 </head>
 <body class="bodyCenter">
@@ -17,6 +18,7 @@
         <input type="password" id="password">
         <p>Vous n'avez pas encore de compte ? <a href="./creationCompte.html">Inscrivez-vous</a></p>
         <button class="addButtonConnexion">Se connecter</button>
+        <div class="divMessage"></div>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
